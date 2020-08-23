@@ -59,6 +59,11 @@ namespace Ladybug.Pathfinding
 						continue; // Neighbor is in closed list, so ignore.
 					}
 
+					if (!neighbor.IsPathable)
+					{
+						continue;
+					}
+
 					var newNode = new Node(
 						currentGScore,
 						neighbor.GetDistanceEstimate(endNode),
